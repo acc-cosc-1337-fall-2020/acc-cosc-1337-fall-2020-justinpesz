@@ -13,7 +13,8 @@ Call multiply_numbers with 10 and 10 parameter values and display function resul
 int main()
 {	
 	int num = 0;
-
+	
+	cout<<"Please enter a number: ";
 	cin>>num;
 	
 	int result = multi_numbers(num);
