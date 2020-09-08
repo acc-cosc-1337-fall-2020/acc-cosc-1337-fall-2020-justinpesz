@@ -2,12 +2,17 @@
 #include "catch.hpp"
 #include "numbers.h"
 #include<string>
+#include "vars.h"
 
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
 }
 
 /*test case echo_variable */
+TEST_CASE("Test echo function")
+{
+	REQUIRE(echo_variable_ret(5) == 5);
+}
 
 /*test case add_to_double_1 with 0 as parameter*/
 
