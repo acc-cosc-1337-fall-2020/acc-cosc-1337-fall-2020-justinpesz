@@ -1,5 +1,6 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
+#include "casting.h"
 
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
@@ -17,7 +18,10 @@ TEST_CASE("Verify Test Configuration", "verification") {
 
 /*Test case convert double to int to show that a double converted to int truncates 
 the decimal portion*/
-
+TEST_CASE("test double to int function")
+{
+	REQUIRE(convert_double_to_int(10.55) == 10);
+}
 /*Test case static cast double int to show that a double casted to int truncates
 decimal portion*/
 
