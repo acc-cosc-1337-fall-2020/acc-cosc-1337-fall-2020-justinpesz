@@ -1,11 +1,15 @@
-//Write the include statement for types.h here
 #include "types.h"
 
-//DON'T ERASE THIS
-int sum_numbers(int num1, int num2)
+//example
+int multi_numbers(int num1)
 {
-	return num1 + num2;
+	int num2 = 5;
+
+	return num1 * num2;
 }
+
+//write code for multiply_numbers function here
+//function returns product of num1 and num2
 
 
 

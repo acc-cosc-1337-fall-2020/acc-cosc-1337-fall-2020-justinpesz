@@ -1,16 +1,18 @@
 #include "variables.h"
 
-//example
-int multi_numbers(int num1)
+double get_sales_tax_amount(double meal_amount)
 {
-	int num2 = 5;
+	const double tax_rate = .0675;
+	double tax = 0.00;
+	tax = meal_amount * tax_rate;
 
-	return num1 * num2;
+	return tax;
 }
 
-//write code for multiply_numbers function here
-//function returns product of num1 and num2
+double get_tip_amount(double meal_amount, double tip_rate)
+{
+	double tip = 0.00;
+	tip = tip_rate / 100 * meal_amount;
 
-
-
-
+	return tip;
+}

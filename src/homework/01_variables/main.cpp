@@ -1,29 +1,30 @@
 ﻿#include "variables.h"
 #include<iostream>
+#include<iomanip>
 
-//write include statements
+using std::cin;	using std::cout;
 
-
-//write namespace using statement for cout
-using std::cout;
-using std::cin;
-/*
-Call multiply_numbers with 10 and 10 parameter values and display function result
-*/
 int main()
-{	
-	int num = 0;
-	
-	cout<<"Please enter a number: ";
-	cin>>num;
-	
-	int result = multi_numbers(num);
-	cout<<result<<"\n";
+{
+	double meal_total = 0.00;
+	double tip_percent = 0.00;
+	double total = 0.00;
 
-	int num1 = 4;
+	cout<<"Enter meal total: $";
+	cin>>meal_total;
 
-	result = multi_numbers(num1);
-	cout<<result;
+	cout<<"Enter tip percentage: ";
+	cin>>tip_percent;
+	
+	double tax_amount = get_sales_tax_amount(meal_total);
+	double tip_amount = get_tip_amount(meal_total, tip_percent);
+
+	total = meal_total + tax_amount + tip_amount;
+
+	cout<<"\nMeal Total:  $"<<std::fixed<<std::setprecision(2)<<std::setw(8)<<meal_total<<"\n";
+	cout<<"Sales Tax:   $"<<std::setw(8)<<tax_amount<<"\n";
+	cout<<"Tip applied: $"<<std::setw(8)<<tip_amount<<"\n";
+	cout<<"Total Bill:  $"<<std::setw(8)<<total;
 
 	return 0;
 }
