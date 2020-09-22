@@ -17,3 +17,13 @@ TEST_CASE("Verify get letter grade using if")
 	REQUIRE(get_letter_grade_using_if(101) == "");
 	REQUIRE(get_letter_grade_using_if(-1) == "");
 }
+
+TEST_CASE("Verify get letter grad using switch")
+{
+	REQUIRE(get_letter_grade_using_switch(1) == "A");
+	REQUIRE(get_letter_grade_using_switch(2) == "B");
+	REQUIRE(get_letter_grade_using_switch(3) == "C");
+	REQUIRE(get_letter_grade_using_switch(4) == "D");
+	REQUIRE(get_letter_grade_using_switch(5) == "F");	
+	REQUIRE(get_letter_grade_using_switch(6) == "");
+}

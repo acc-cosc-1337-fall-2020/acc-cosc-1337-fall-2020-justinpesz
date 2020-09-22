@@ -3,32 +3,83 @@
 #include<string>
 
 std::string get_letter_grade_using_if(int grade)
-{
+ {
     if(grade >= 90 && grade <= 100)
     {
         return "A";
     }
-    if(grade >= 80 && grade < 90)
+    else if(grade >= 80 && grade < 90)
     {
         return "B";
     }
-    if(grade >= 70 && grade < 80)
+    else if(grade >= 70 && grade < 80)
     {
         return "C";
     }
-    if(grade >= 60 && grade < 70)
+    else if(grade >= 60 && grade < 70)
     {
         return "D";
     }
-    if(grade >= 0 && grade < 60)
+    else if(grade >= 0 && grade < 60)
     {
         return "F";
     }
-
-    return "";
+    else
+    {
+        return "";
+    }
+    return 0;
 }
 
-/*std::string get_letter_grade_using_switch(int grade)
+std::string get_letter_grade_using_switch(int grade)
 {
-    
-}*/
+     
+    switch(grade)
+    {
+    case 1:
+        return "A";
+        break;
+    case 2:
+        return "B";
+        break;
+    case 3:
+        return "C";
+        break;
+    case 4:
+        return "D";
+        break;
+    case 5:
+        return "F";
+        break;
+    default:
+        return "";
+    } 
+}
+
+int convert_number_grade(int grade)
+{
+    if (grade >= 90 && grade <= 100)
+    {
+        return 1;
+    }
+    else if (grade >= 80 && grade < 90)
+    {
+        return 2;
+    }
+    else if (grade >= 70 && grade < 80)
+    {
+        return 3;
+    }
+    else if (grade >= 60 && grade < 70)
+    {
+        return 4;
+    }
+    else if (grade >= 0 && grade < 60)
+    {
+        return 5;
+    }
+    else
+    {
+        return 0;
+    }    
+}

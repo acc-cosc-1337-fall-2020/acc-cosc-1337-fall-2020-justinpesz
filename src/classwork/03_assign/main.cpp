@@ -16,7 +16,8 @@ int main()
 		cout<<"Enter numeric grade: ";
 		cin>>grade;
 
-		cout<<get_letter_grade_using_if(grade)<<"\n";
+		cout<<"Letter grade using if statement: "<<get_letter_grade_using_if(grade)<<"\n";
+		cout<<"Letter grade using switch statement: "<<get_letter_grade_using_switch(convert_number_grade(grade))<<"\n";
 
 		cout<<"Enter another? ";
 		cin>>yesNo;
