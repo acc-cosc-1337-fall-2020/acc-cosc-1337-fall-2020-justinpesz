@@ -6,9 +6,9 @@ using std::cout;
 
 int main() 
 {
-	int option, y=0, z=0;
+	char option, y=0, z=0;
 
-	cout<<"Enter a number: ";
+	cout<<"Enter a letter: ";
 	cin>>option;
 
 	std::string result = menu(option);
