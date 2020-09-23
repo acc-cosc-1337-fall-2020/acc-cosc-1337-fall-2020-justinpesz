@@ -3,7 +3,8 @@
 #include "loops.h"
 #include "decision.h"
 
-TEST_CASE("Verify Test Configuration", "verification") {
+TEST_CASE("Verify Test Configuration", "verification")
+{
 	REQUIRE(true == true);
 }
 
@@ -14,16 +15,27 @@ TEST_CASE("Verify get letter grade using if")
 	REQUIRE(get_letter_grade_using_if(75) == "C");
 	REQUIRE(get_letter_grade_using_if(65) == "D");
 	REQUIRE(get_letter_grade_using_if(50) == "F");
-	REQUIRE(get_letter_grade_using_if(101) == "");
-	REQUIRE(get_letter_grade_using_if(-1) == "");
+	REQUIRE(get_letter_grade_using_if(-1) == "F");
 }
 
 TEST_CASE("Verify get letter grad using switch")
 {
-	REQUIRE(get_letter_grade_using_switch(1) == "A");
-	REQUIRE(get_letter_grade_using_switch(2) == "B");
-	REQUIRE(get_letter_grade_using_switch(3) == "C");
-	REQUIRE(get_letter_grade_using_switch(4) == "D");
-	REQUIRE(get_letter_grade_using_switch(5) == "F");	
-	REQUIRE(get_letter_grade_using_switch(6) == "");
+	REQUIRE(get_letter_grade_using_switch(95) == "A");
+	REQUIRE(get_letter_grade_using_switch(85) == "B");
+	REQUIRE(get_letter_grade_using_switch(75) == "C");
+	REQUIRE(get_letter_grade_using_switch(65) == "D");	
+	REQUIRE(get_letter_grade_using_switch(50) == "F");
+	REQUIRE(get_letter_grade_using_switch(101) == "A");
+	REQUIRE(get_letter_grade_using_switch(-1) == "F");
+	
 }
+
+/*TEST_CASE("Verify convert number grade")
+{
+	REQUIRE(convert_number_grade(95) == 1);
+	REQUIRE(convert_number_grade(85) == 2);
+	REQUIRE(convert_number_grade(75) == 3);
+	REQUIRE(convert_number_grade(65) == 4);
+	REQUIRE(convert_number_grade(50) == 5);
+	REQUIRE(convert_number_grade(-1) == 0);
+}*/

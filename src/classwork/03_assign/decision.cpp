@@ -4,7 +4,7 @@
 
 std::string get_letter_grade_using_if(int grade)
  {
-    if(grade >= 90 && grade <= 100)
+    if(grade >= 90)
     {
         return "A";
     }
@@ -20,18 +20,44 @@ std::string get_letter_grade_using_if(int grade)
     {
         return "D";
     }
-    else if(grade >= 0 && grade < 60)
-    {
-        return "F";
-    }
     else
     {
-        return "";
+        return "F";
     }
     return 0;
 }
 
 std::string get_letter_grade_using_switch(int grade)
+{
+    if(grade > 100)
+    {
+        grade = 100;
+    }    
+    
+    switch(grade/10)
+    {
+    case 10:
+        return "A";
+        break;    
+    case 9:
+        return "A";
+        break;
+    case 8:
+        return "B";
+        break;
+    case 7:
+        return "C";
+        break;
+    case 6:
+        return "D";
+        break;
+    default:
+        return "F";
+    }
+    return 0;
+}
+
+/*std::string get_letter_grade_using_switch(int grade)
 {
      
     switch(grade)
@@ -82,4 +108,4 @@ int convert_number_grade(int grade)
     {
         return 0;
     }    
-}
+}*/
