@@ -12,3 +12,5 @@ TEST_CASE("Verify factorial")
 	REQUIRE(factorial(4) == 24);
 	REQUIRE(factorial(5) == 120);
 }
+
+/*push*/
