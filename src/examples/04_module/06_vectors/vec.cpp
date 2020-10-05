@@ -1,6 +1,7 @@
-#include "for_ranged.h"
+#include "vec.h"
 #include<iostream>
 #include<vector>
+#include<string>
 
 using std::vector;
 
@@ -13,6 +14,13 @@ and displays the numbers to screen using an indexed for loop as follows: 9 10 99
 
 
 */
+void loop_string_w_index(std::string &str)
+{
+    for (std::size_t i=0; i < str.size(); ++i)
+    {
+        str[i] = 'z';
+    }
+}
 
 
 

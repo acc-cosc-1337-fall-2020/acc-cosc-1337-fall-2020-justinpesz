@@ -26,7 +26,7 @@ int sum_numbers(int num)
 {
     int sum = 0;
 
-    for(int 1=0; i <= num; ++i)
+    for(int i=0; i <= num; ++i)
     {
         
         ;

@@ -1,5 +1,11 @@
+#include "dna.h"
+#include<iostream>
+#include<string>
+#include<iomanip>
 //write include statements
-
+using std::cin;
+using std::cout;
+using std::string;
 //write using statements
 
 
@@ -12,5 +18,32 @@ user enters a y or Y.
 */
 int main() 
 {
+	int num = 0;
+	
+	do
+	{
+		string content = "";
+
+		cout<<"Enter DNA String: ";
+		cin>>content;
+		
+		cout<<"Enter 1 for Get GC Content or 2 Get DNA Complement: ";
+		cin>>num;
+
+		if (num == 1)
+		{
+			double result = get_gc_content(content);
+
+			cout<<result<<"\n";		
+		}
+		if (num == 2)
+		{
+			string result = get_dna_complement(content);
+			cout<<content<<"\n";
+			cout<<result<<"\n";
+		}
+
+	}while (num > 0 || num < 3);
+	
 	return 0;
 }
