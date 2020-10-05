@@ -17,3 +17,9 @@ TEST_CASE("Verify reverse string")
 	REQUIRE(get_reverse_string("AGCTATAG") == "GATATCGA");
 	REQUIRE(get_reverse_string("CGCTATAG") == "GATATCGC");
 }
+
+TEST_CASE("Verify get DNA complement")
+{
+	REQUIRE(get_dna_complement("AAAACCCGGT") == "ACCGGGTTTT");
+	REQUIRE(get_dna_complement("CCCGGAAAAT") == "ATTTTCCGGG");
+}
