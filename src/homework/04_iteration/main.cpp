@@ -18,8 +18,9 @@ user enters a y or Y.
 */
 int main() 
 {
-	int num = 0;
-	
+	char num = 0;
+	char yesNo = 'y';
+
 	do
 	{
 		string content = "";
@@ -29,21 +30,29 @@ int main()
 		
 		cout<<"Enter 1 for Get GC Content or 2 Get DNA Complement: ";
 		cin>>num;
-
-		if (num == 1)
+		
+		if (num == '1')
 		{
 			double result = get_gc_content(content);
 
 			cout<<result<<"\n";		
 		}
-		if (num == 2)
+		else if (num == '2')
 		{
 			string result = get_dna_complement(content);
-			cout<<content<<"\n";
+			
 			cout<<result<<"\n";
 		}
+		else
+		{
+			cout<<"Invalid Option\n";
+		}	
 
-	}while (num > 0 || num < 3);
+		cout<<"\nEnter another DNA string? ";
+		
+		cin>>yesNo;
 	
+	}while (yesNo == 'y' || yesNo == 'Y');
+
 	return 0;
 }
