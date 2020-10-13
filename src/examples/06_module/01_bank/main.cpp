@@ -9,7 +9,7 @@ using std::cin;
 
 int main()
 {
-	BankAccount account(100);
+	BankAccount account(100, 123173);
 	cout<<"Balance: "<<account.get_balance()<<"\n\n";
 
 	BankAccount new_account(0);
@@ -17,5 +17,7 @@ int main()
 	
 	display_bank_account_data(new_account);
 
+	cout<<"Bank Balance: "<<account.get_bank_balance();
+	
 	return 0;
 }
