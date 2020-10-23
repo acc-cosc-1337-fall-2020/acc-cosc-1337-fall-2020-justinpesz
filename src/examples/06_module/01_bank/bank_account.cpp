@@ -2,6 +2,11 @@
 #include "bank_account.h"
 #include<iostream>
 
+BankAccount::BankAccount(int b) : balance(b)
+{
+    balance = b;
+}
+
 BankAccount::BankAccount(int b, int c) : balance(b), customer_no(c)
 {
     bank_balance += balance;

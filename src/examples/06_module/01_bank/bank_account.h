@@ -2,6 +2,7 @@
 class BankAccount
 {
 public:
+    BankAccount(int b);
     BankAccount(int b, int c);
     int get_balance()const{return balance;}
     int get_customer_no()const{return customer_no;}
@@ -9,8 +10,11 @@ public:
     void withdraw(int amount);
     static int get_bank_balance(){return bank_balance;}
 
-private:
+protected:
     int balance;
+    
+private:
+    
     static int bank_balance;
     int customer_no;
 };
