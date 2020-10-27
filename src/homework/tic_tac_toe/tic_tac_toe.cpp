@@ -46,8 +46,21 @@ void TicTacToe::start_game(string first_player)
 
 void TicTacToe::mark_board(int position)
 {
-    pegs[position-1] = player;
-    set_next_player();
+    do
+    {
+        if(pegs[position-1] == " ")
+        {
+            pegs[position-1] = player;
+            set_next_player();
+        }
+        else
+        {
+            std::cout<<"Position played already!\n";
+        }
+        
+    }while(pegs[position-1] == " ");
+    
+
 }
 
 void TicTacToe::display_board()const
