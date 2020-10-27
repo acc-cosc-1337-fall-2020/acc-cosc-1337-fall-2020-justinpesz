@@ -32,6 +32,22 @@ TEST_CASE("Verify game ends when the board is full")
 	REQUIRE(tic_tac_toe.get_winner() == "Tie!");
 }
 
+TEST_CASE("get player function X")
+{
+	TicTacToe tic_tac_toe;
+	tic_tac_toe.start_game("X");
+
+	REQUIRE(tic_tac_toe.get_player() == "X");
+}
+
+TEST_CASE("get player function O")
+{
+	TicTacToe tic_tac_toe;
+	tic_tac_toe.start_game("O");
+
+	REQUIRE(tic_tac_toe.get_player() == "O");
+}
+
 TEST_CASE("check column 1 win function")
 {
 	TicTacToe tic_tac_toe;

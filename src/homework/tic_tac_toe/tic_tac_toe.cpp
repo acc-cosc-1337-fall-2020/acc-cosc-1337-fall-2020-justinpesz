@@ -218,6 +218,11 @@ void TicTacToe::set_winner()
     }   
 }
 
+std::string TicTacToe::get_player()
+{
+    return player;
+}
+
 std::string TicTacToe::get_winner()
 {
     return winner;
