@@ -13,8 +13,8 @@ public:
     void start_game(std::string first_player);
     void mark_board(int position);
     void display_board()const;
-    std::string get_player();
-    std::string get_winner();
+    std::string get_player(){return player;}
+    std::string get_winner(){return winner;}
 
 private:
     std::string winner;
