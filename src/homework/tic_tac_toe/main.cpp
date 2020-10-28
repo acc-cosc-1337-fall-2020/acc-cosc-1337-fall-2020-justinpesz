@@ -36,7 +36,7 @@ int main()
 
 		tic_tac_toe.start_game(player);
 		tic_tac_toe.display_board();
-		
+
 		do
 		{
 			int position;
@@ -51,7 +51,7 @@ int main()
 		cout<<"The winner of the game is: "<<tic_tac_toe.get_winner()<<"\n\n";
 		player = "";
 
-		cout<<"Play again? (y/n)";
+		cout<<"Play again? (y/n) ";
 		cin>>yesNo;
 	
 	}while(yesNo == 'Y' || yesNo == 'y');
