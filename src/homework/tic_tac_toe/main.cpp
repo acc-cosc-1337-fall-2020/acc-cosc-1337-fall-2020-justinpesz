@@ -42,11 +42,21 @@ int main()
 		do
 		{
 			int position;
+			
 			cout<<"Enter position 1 to 9: ";
 			cin>>position;
-			tic_tac_toe.mark_board(position);
-			tic_tac_toe.display_board();
-
+			
+			if(position >= 1 && position <= 9)
+			{
+				tic_tac_toe.mark_board(position);
+				tic_tac_toe.display_board();
+			}
+			else
+			{
+				cout<<"Invalid position!\n";
+			}
+			
+			
 		}while(tic_tac_toe.game_over() == false);
 
 		cout<<"Game Over\n\n";

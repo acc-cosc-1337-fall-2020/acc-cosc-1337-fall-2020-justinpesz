@@ -35,7 +35,7 @@ bool TicTacToe::game_over()
             return false;
         }
     }    
-    return false;
+    return 0;
 }
 
 bool TicTacToe::check_board_full()const
@@ -106,7 +106,7 @@ bool TicTacToe::check_diagonal_win()
 void TicTacToe::start_game(string first_player)
 {
     player = first_player;
-    clear_board();
+    //clear_board();
 }
 
 void TicTacToe::mark_board(int position)

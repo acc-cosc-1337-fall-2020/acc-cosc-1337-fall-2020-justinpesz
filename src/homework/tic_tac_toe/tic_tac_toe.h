@@ -10,7 +10,7 @@ class TicTacToe
 {
 public:
     std::string get_player()const{return player;}
-    std::string get_winner(){return winner;}
+    std::string get_winner()const{return winner;}
     bool game_over();
     void start_game(std::string first_player);
     void mark_board(int position);
