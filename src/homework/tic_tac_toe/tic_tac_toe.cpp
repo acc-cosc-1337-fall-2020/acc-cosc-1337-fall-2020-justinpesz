@@ -148,15 +148,15 @@ void TicTacToe::set_next_player()
     }
 }
 
-
 void TicTacToe::clear_board()
 {
     for(std::size_t i=0; i < pegs.size(); ++i)
     {
         pegs[i] = " ";
     }
+    
+    
 }
-
 
 void TicTacToe::set_winner()
 {
@@ -168,4 +168,21 @@ void TicTacToe::set_winner()
     {
         winner = "X";
     }   
+}
+
+void TicTacToe::show_numbered_spaces()
+{
+    /*for(std::size_t i=0; i < 9; ++i)
+    {
+        pegs[i] = 1+i;
+    }*/
+    pegs[0] = "1";
+    pegs[1] = "2";
+    pegs[2] = "3";
+    pegs[3] = "4";
+    pegs[4] = "5";
+    pegs[5] = "6";
+    pegs[6] = "7";
+    pegs[7] = "8";
+    pegs[8] = "9";
 }

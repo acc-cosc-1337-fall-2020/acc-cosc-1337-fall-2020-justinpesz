@@ -9,12 +9,14 @@
 class TicTacToe
 {
 public:
+    std::string get_player()const{return player;}
+    std::string get_winner(){return winner;}
     bool game_over();
     void start_game(std::string first_player);
     void mark_board(int position);
     void display_board()const;
-    std::string get_player(){return player;}
-    std::string get_winner(){return winner;}
+    void show_numbered_spaces();
+    void clear_board();
 
 private:
     std::string winner;
@@ -25,7 +27,6 @@ private:
     bool check_row_win();
     bool check_diagonal_win();
     void set_next_player();
-    void clear_board();
     void set_winner();
 };
 
