@@ -40,7 +40,14 @@ int main()
 			int position;
 			
 			cout<<"Enter position 1 to 9: ";
-			cin>>position;
+		
+			while (!(cin>>position))
+			{
+				cout<<"Invalid position!\n";
+				cin.clear();
+				cin.ignore(100, '\n');
+				cout<<"Enter position 1 to 9: ";
+			}
 			
 			if(position >= 1 && position <= 9)
 			{
@@ -51,8 +58,7 @@ int main()
 			{
 				cout<<"Invalid position!\n";
 			}
-			
-			
+
 		}while(tic_tac_toe.game_over() == false);
 
 		cout<<"Game Over\n\n";
