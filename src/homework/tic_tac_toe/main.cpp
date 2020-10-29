@@ -34,9 +34,7 @@ int main()
 
 		tic_tac_toe.start_game(player);
 		tic_tac_toe.show_numbered_spaces();
-		tic_tac_toe.display_board();
-		tic_tac_toe.clear_board();
-
+		
 		do
 		{
 			int position;

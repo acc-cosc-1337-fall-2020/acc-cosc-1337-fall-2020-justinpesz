@@ -173,4 +173,7 @@ void TicTacToe::show_numbered_spaces()
     pegs[6] = "7";
     pegs[7] = "8";
     pegs[8] = "9";
+
+    display_board();
+    clear_board();
 }

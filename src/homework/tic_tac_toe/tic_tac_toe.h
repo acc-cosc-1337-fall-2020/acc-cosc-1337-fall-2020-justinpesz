@@ -1,4 +1,3 @@
-//h
 #include<vector>
 #include<string>
 #include<iostream>
@@ -16,8 +15,7 @@ public:
     void mark_board(int position);
     void display_board()const;
     void show_numbered_spaces();
-    void clear_board();
-
+    
 private:
     std::string winner;
     std::string player;
@@ -28,6 +26,7 @@ private:
     bool check_diagonal_win();
     void set_next_player();
     void set_winner();
+    void clear_board();
 };
 
 #endif
