@@ -1,10 +1,7 @@
-//cpp
 #include "tic_tac_toe.h"
-#include<iostream>
 
 using std::vector;
 using std::string;
-
 
 bool TicTacToe::game_over()
 {
@@ -61,7 +58,7 @@ bool TicTacToe::check_column_win()
 
 bool TicTacToe::check_row_win()
 {
-    for(std::size_t i=0; i < 9; i+=3)
+    for(std::size_t i=0; i < 7; i+=3)
     {
         if(pegs[i] == "X" && pegs[i+1] == "X" && pegs[i+2] == "X")
         {
@@ -147,8 +144,6 @@ void TicTacToe::clear_board()
     {
         pegs[i] = " ";
     }
-    
-    
 }
 
 void TicTacToe::set_winner()
