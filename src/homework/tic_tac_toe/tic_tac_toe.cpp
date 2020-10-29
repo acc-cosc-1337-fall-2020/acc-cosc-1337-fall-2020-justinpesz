@@ -8,34 +8,27 @@ using std::string;
 
 bool TicTacToe::game_over()
 {
-    while (winner != "X" || winner != "O")
+    if(check_column_win() == true)
     {
-        if(check_column_win() == true)
-        {
-            set_winner();
-            return true;
-        }
-        else if(check_row_win() == true)
-        {
-            set_winner();
-            return true;
-        }
-        else if(check_diagonal_win() == true)
-        {
-            set_winner();
-            return true;
-        }
-        else if(check_board_full() == true)
-        {
-            winner = "Tie!";
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }    
-    return 0;
+        set_winner();
+        return true;
+    }
+    else if(check_row_win() == true)
+    {
+        set_winner();
+        return true;
+    }
+    else if(check_diagonal_win() == true)
+    {
+        set_winner();
+        return true;
+    }
+    else if(check_board_full() == true)
+    {
+        winner = "Tie!";
+        return true;
+    }
+    return false;
 }
 
 bool TicTacToe::check_board_full()const
