@@ -1,7 +1,5 @@
 //cpp
 #include "tic_tac_toe.h"
-//#include<vector>
-//#include<string>
 #include<iostream>
 
 using std::vector;
@@ -14,14 +12,17 @@ bool TicTacToe::game_over()
     {
         if(check_column_win() == true)
         {
+            set_winner();
             return true;
         }
         else if(check_row_win() == true)
         {
+            set_winner();
             return true;
         }
         else if(check_diagonal_win() == true)
         {
+            set_winner();
             return true;
         }
         else if(check_board_full() == true)
@@ -33,7 +34,71 @@ bool TicTacToe::game_over()
         {
             return false;
         }
-        
+    }    
+    return false;
+}
+
+bool TicTacToe::check_board_full()const
+{
+    for(auto peg: pegs)
+    {
+        if(peg == " ")
+        {
+            return false;
+        }    
+    }
+    return true;
+}
+
+bool TicTacToe::check_column_win()
+{
+    for(std::size_t i=0; i < 3; ++i)
+    {
+        if(pegs[i] == "X" && pegs[i+3] == "X" && pegs[i+6] == "X")
+        {
+            return true;
+        }
+        else if(pegs[i] == "O" && pegs[i+3] == "O" && pegs[i+6] == "O")
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool TicTacToe::check_row_win()
+{
+    for(std::size_t i=0; i < 9; i+=3)
+    {
+        if(pegs[i] == "X" && pegs[i+1] == "X" && pegs[i+2] == "X")
+        {
+            return true;
+        }
+        else if(pegs[i] == "O" && pegs[i+1] == "O" && pegs[i+2] == "O")
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool TicTacToe::check_diagonal_win()
+{
+    if(pegs[0] == "X" && pegs[4] == "X" && pegs[8] == "X")
+    {
+        return true;
+    } 
+    else if(pegs[2] == "X" && pegs[4] == "X" && pegs[6] == "X")
+    {
+        return true;
+    }
+    else if(pegs[0] == "O" && pegs[4] == "O" && pegs[8] == "O")
+    {
+        return true;
+    }
+    else if(pegs[6] == "O" && pegs[4] == "O" && pegs[2] == "O")
+    {
+        return true;
     }
     return false;
 }
@@ -83,166 +148,15 @@ void TicTacToe::set_next_player()
     }
 }
 
-bool TicTacToe::check_board_full()const
-{
-    for(auto peg: pegs)
-    {
-        if(peg == " ")
-        {
-            return false;
-        }    
-    }
-    
-    return true;
-
-}
 
 void TicTacToe::clear_board()
 {
-    /*pegs[0] = "1";
-    pegs[1] = "2";
-    pegs[2] = "3";
-    pegs[3] = "4";
-    pegs[4] = "5";
-    pegs[5] = "6";
-    pegs[6] = "7";
-    pegs[7] = "8";
-    pegs[8] = "9";*/
-    
     for(std::size_t i=0; i < pegs.size(); ++i)
     {
         pegs[i] = " ";
     }
 }
 
-bool TicTacToe::check_column_win()
-{
-    for(std::size_t i=0; i < 3; ++i)
-    {
-        if(pegs[i] == "X" && pegs[i+3] == "X" && pegs[i+6] == "X")
-        {
-            set_winner();
-            return true;
-        }
-        else if(pegs[i] == "O" && pegs[i+3] == "O" && pegs[i+6] == "O")
-        {
-            set_winner();
-            return true;
-        }
-    }
-    
-    /*if(pegs[0] == "X" && pegs[3] == "X" && pegs[6] == "X")
-    {
-        set_winner();
-        return true;
-    }
-    else if(pegs[1] == "X" && pegs[4] == "X" && pegs[7] == "X")
-    {
-        set_winner();
-        return true;
-    }
-    else if(pegs[2] == "X" && pegs[5] == "X" && pegs[8] == "X")
-    {
-        set_winner();
-        return true;
-    }
-    else if(pegs[0] == "O" && pegs[3] == "O" && pegs[6] == "O")
-    {
-        set_winner();
-        return true;
-    }
-    else if(pegs[1] == "O" && pegs[4] == "O" && pegs[7] == "O")
-    {
-        set_winner();
-        return true;
-    }
-    else if(pegs[2] == "O" && pegs[5] == "O" && pegs[8] == "O")
-    {
-        set_winner();
-        return true;
-    }*/
-    
-    return false;
-
-}
-
-bool TicTacToe::check_row_win()
-{
-    for(std::size_t i=0; i < 9; i+=3)
-    {
-        if(pegs[i] == "X" && pegs[i+1] == "X" && pegs[i+2] == "X")
-        {
-            set_winner();
-            return true;
-        }
-        else if(pegs[i] == "O" && pegs[i+1] == "O" && pegs[i+2] == "O")
-        {
-            set_winner();
-            return true;
-        }
-    }
-    
-    /*if(pegs[0] == "X" && pegs[1] == "X" && pegs[2] == "X")
-    {
-        set_winner();
-        return true;
-    }
-    else if(pegs[3] == "X" && pegs[4] == "X" && pegs[5] == "X")
-    {
-        set_winner();
-        return true;
-    }
-    else if(pegs[6] == "X" && pegs[7] == "X" && pegs[8] == "X")
-    {
-        set_winner();
-        return true;
-    }
-    else if(pegs[0] == "O" && pegs[1] == "O" && pegs[2] == "O")
-    {
-        set_winner();
-        return true;
-    }
-    else if(pegs[3] == "O" && pegs[4] == "O" && pegs[5] == "O")
-    {
-        set_winner();
-        return true;
-    }
-    else if(pegs[6] == "O" && pegs[7] == "O" && pegs[8] == "O")
-    {
-        set_winner();
-        return true;
-    }*/
-
-    return false;
-
-}
-
-bool TicTacToe::check_diagonal_win()
-{
-    if(pegs[0] == "X" && pegs[4] == "X" && pegs[8] == "X")
-    {
-        set_winner();
-        return true;
-    } 
-    else if(pegs[2] == "X" && pegs[4] == "X" && pegs[6] == "X")
-    {
-        set_winner();
-        return true;
-    }
-    else if(pegs[0] == "O" && pegs[4] == "O" && pegs[8] == "O")
-    {
-        set_winner();
-        return true;
-    }
-    else if(pegs[6] == "O" && pegs[4] == "O" && pegs[2] == "O")
-    {
-        set_winner();
-        return true;
-    }
-    
-    return false;
-
-}
 
 void TicTacToe::set_winner()
 {
@@ -255,13 +169,3 @@ void TicTacToe::set_winner()
         winner = "X";
     }   
 }
-
-/*std::string TicTacToe::get_player()
-{
-    return player;
-}
-
-std::string TicTacToe::get_winner()
-{
-    return winner;
-}*/
