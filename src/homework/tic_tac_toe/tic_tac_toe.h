@@ -19,8 +19,8 @@ public:
 private:
     std::string winner;
     std::string player;
+    std::vector<int> pegs1{9, 0};
     std::vector<std::string> pegs{9, " "};
-    std::vector<std::string> pegs1{9, " "};
     bool check_board_full()const;
     bool check_column_win();
     bool check_row_win();
