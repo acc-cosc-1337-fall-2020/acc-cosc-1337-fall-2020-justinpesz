@@ -14,8 +14,7 @@ public:
     void start_game(std::string first_player);
     void mark_board(int position);
     void display_board()const;
-    void show_numbered_spaces();
-    
+        
 private:
     std::string winner;
     std::string player;

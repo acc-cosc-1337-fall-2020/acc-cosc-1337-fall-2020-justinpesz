@@ -58,7 +58,12 @@ int main()
 			{
 				cout<<"Invalid position!\n";
 			}
-
+			
+			if(tic_tac_toe.game_over() == false) 
+			{
+				std::cout<<"\nPlayer is: "<<tic_tac_toe.get_player()<<"\n\n";
+			}
+	
 		}while(tic_tac_toe.game_over() == false);
 
 		cout<<"Game Over\n\n";

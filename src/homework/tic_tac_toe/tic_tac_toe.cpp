@@ -30,9 +30,9 @@ bool TicTacToe::game_over()
 
 bool TicTacToe::check_board_full()const
 {
-    for(auto peg1: pegs)
+    for(auto peg: pegs)
     {
-        if(peg1 == " ")
+        if(peg == " ")
         {
             return false;
         }    
@@ -58,7 +58,7 @@ bool TicTacToe::check_column_win()
 
 bool TicTacToe::check_row_win()
 {
-    for(std::size_t i=0; i < 7; i+=3)
+    for(std::size_t i=0; i < 7; i += 3)
     {
         if(pegs[i] == "X" && pegs[i+1] == "X" && pegs[i+2] == "X")
         {
@@ -118,12 +118,14 @@ void TicTacToe::display_board()const
     {
         std::cout<<pegs1[i]<<"|"<<pegs1[i+1]<<"|"<<pegs1[i+2]<<"\n";
     }
+
     std::cout<<"\n";
     
-    for(std::size_t x=0; x < pegs.size(); x += 3)
+    for(std::size_t n=0; n < pegs.size(); n += 3)
     {
-        std::cout<<pegs[x]<<"|"<<pegs[x+1]<<"|"<<pegs[x+2]<<"\n";
+        std::cout<<pegs[n]<<"|"<<pegs[n+1]<<"|"<<pegs[n+2]<<"\n";
     }
+    
 }
 
 void TicTacToe::set_next_player()
