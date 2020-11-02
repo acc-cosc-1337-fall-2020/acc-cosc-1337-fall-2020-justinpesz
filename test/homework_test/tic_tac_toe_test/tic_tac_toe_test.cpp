@@ -1,6 +1,7 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
 #include "tic_tac_toe.h"
+#include "tic_tac_toe_manager.h"
 
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
@@ -214,4 +215,52 @@ TEST_CASE("check diagonal 2 win function")
 	
 	tic_tac_toe.mark_board(7);
 	REQUIRE(tic_tac_toe.game_over() == true);
+}
+
+TEST_CASE("Verify X as winner")
+{
+	TicTacToe tic_tac_toe;
+	TicTacToeManager manager;
+	tic_tac_toe.start_game("X");
+
+	tic_tac_toe.mark_board(3);
+	REQUIRE(tic_tac_toe.game_over() == false);
+	
+	tic_tac_toe.mark_board(2);
+	REQUIRE(tic_tac_toe.game_over() == false);
+	
+	tic_tac_toe.mark_board(5);
+	REQUIRE(tic_tac_toe.game_over() == false);
+	
+	tic_tac_toe.mark_board(4);
+	REQUIRE(tic_tac_toe.game_over() == false);
+	
+	tic_tac_toe.mark_board(7);
+	REQUIRE(tic_tac_toe.game_over() == true);
+
+	REQUIRE(tic_tac_toe.get_winner() == "X");
+}
+
+TEST_CASE("Verify O as winner")
+{
+	TicTacToe tic_tac_toe;
+	TicTacToeManager manager;
+	tic_tac_toe.start_game("O");
+
+	tic_tac_toe.mark_board(3);
+	REQUIRE(tic_tac_toe.game_over() == false);
+	
+	tic_tac_toe.mark_board(2);
+	REQUIRE(tic_tac_toe.game_over() == false);
+	
+	tic_tac_toe.mark_board(5);
+	REQUIRE(tic_tac_toe.game_over() == false);
+	
+	tic_tac_toe.mark_board(4);
+	REQUIRE(tic_tac_toe.game_over() == false);
+	
+	tic_tac_toe.mark_board(7);
+	REQUIRE(tic_tac_toe.game_over() == true);
+
+	REQUIRE(tic_tac_toe.get_winner() == "O");
 }

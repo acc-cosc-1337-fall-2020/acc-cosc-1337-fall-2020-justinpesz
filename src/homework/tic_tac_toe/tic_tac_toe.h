@@ -13,12 +13,13 @@ public:
     bool game_over();
     void start_game(std::string first_player);
     void mark_board(int position);
-    void display_board()const;
-        
+    friend std::ostream& operator<<(std::ostream& out, TicTacToe& b);
+    friend std::istream& operator>>(std::istream& in, TicTacToe& b);
+
 private:
     std::string winner;
     std::string player;
-    std::vector<int> pegs1{9, 0};
+    std::vector<int> pegs1{1, 2, 3, 4, 5, 6, 7, 8, 9};
     std::vector<std::string> pegs{9, " "};
     bool check_board_full()const;
     bool check_column_win();

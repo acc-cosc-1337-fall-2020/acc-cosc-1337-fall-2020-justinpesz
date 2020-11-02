@@ -112,22 +112,6 @@ void TicTacToe::mark_board(int position)
     }   
 }
 
-void TicTacToe::display_board()const
-{
-    for(std::size_t i=0; i < 9; i += 3)
-    {
-        std::cout<<pegs1[i]<<"|"<<pegs1[i+1]<<"|"<<pegs1[i+2]<<"\n";
-    }
-
-    std::cout<<"\n";
-    
-    for(std::size_t n=0; n < pegs.size(); n += 3)
-    {
-        std::cout<<pegs[n]<<"|"<<pegs[n+1]<<"|"<<pegs[n+2]<<"\n";
-    }
-    
-}
-
 void TicTacToe::set_next_player()
 {
     if(player == "X")
@@ -147,9 +131,9 @@ void TicTacToe::clear_board()
         pegs[i] = " ";
     }
     
-    for(std::size_t i=0; i < 9; ++i)
+    for(std::size_t i=0; i < pegs1.size(); ++i)
     {
-        pegs1[i] = i+1;
+        pegs1[i] = i + 1;
     }
 }
 
@@ -163,4 +147,46 @@ void TicTacToe::set_winner()
     {
         winner = "X";
     }   
+}
+
+std::istream& operator>>(std::istream& in, TicTacToe& b)
+{
+    int position;
+			
+	std::cout<<"Enter position 1 to 9: ";
+		
+	while (!(in>>position))
+	{
+		std::cout<<"Invalid position!\n";
+		in.clear();
+		in.ignore(100, '\n');
+		std::cout<<"Enter position 1 to 9: ";
+	}
+			
+	if(position >= 1 && position <= 9)
+	{
+		b.mark_board(position);
+	}
+	else
+	{
+		std::cout<<"Invalid position!\n";
+	}
+    return in;   
+}
+
+
+std::ostream& operator<<(std::ostream& out, TicTacToe& b)
+{
+    for(std::size_t i=0; i < b.pegs1.size(); i += 3)
+    {
+        out<<b.pegs1[i]<<"|"<<b.pegs1[i+1]<<"|"<<b.pegs1[i+2]<<"\n";
+    }
+  
+    out<<"\n";
+
+    for(std::size_t n=0; n < b.pegs.size(); n += 3)
+    {
+        out<<b.pegs[n]<<"|"<<b.pegs[n+1]<<"|"<<b.pegs[n+2]<<"\n";
+    }
+    return out;
 }

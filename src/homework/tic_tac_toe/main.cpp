@@ -1,4 +1,5 @@
 #include "tic_tac_toe.h"
+#include "tic_tac_toe_manager.h"
 
 using std::cout;
 using std::cin;
@@ -6,6 +7,8 @@ using std::cin;
 int main() 
 {
 	TicTacToe tic_tac_toe;
+	TicTacToeManager manager;
+
 	std::string player = "";
 	char yesNo;
 	
@@ -33,32 +36,13 @@ int main()
 		}
 
 		tic_tac_toe.start_game(player);
-		tic_tac_toe.display_board();
+		cout<<tic_tac_toe;
 
 		do
 		{
-			int position;
-			
-			cout<<"Enter position 1 to 9: ";
-		
-			while (!(cin>>position))
-			{
-				cout<<"Invalid position!\n";
-				cin.clear();
-				cin.ignore(100, '\n');
-				cout<<"Enter position 1 to 9: ";
-			}
-			
-			if(position >= 1 && position <= 9)
-			{
-				tic_tac_toe.mark_board(position);
-				tic_tac_toe.display_board();
-			}
-			else
-			{
-				cout<<"Invalid position!\n";
-			}
-			
+			cin>>tic_tac_toe;
+			cout<<tic_tac_toe;
+
 			if(tic_tac_toe.game_over() == false) 
 			{
 				std::cout<<"\nPlayer is: "<<tic_tac_toe.get_player()<<"\n\n";
@@ -70,10 +54,16 @@ int main()
 		cout<<"The winner of the game is: "<<tic_tac_toe.get_winner()<<"\n\n";
 		player = "";
 
+		manager.save_game(tic_tac_toe);
+		manager.get_winner_total();
+
 		cout<<"Play again? (y/n) ";
 		cin>>yesNo;
 	
 	}while(yesNo == 'Y' || yesNo == 'y');
 
+	cout<<"\n";
+	cout<<manager;
+	
 	return 0;	
 }
