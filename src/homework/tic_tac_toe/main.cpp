@@ -55,8 +55,7 @@ int main()
 		player = "";
 
 		manager.save_game(tic_tac_toe);
-		manager.get_winner_total();
-
+		
 		cout<<"Play again? (y/n) ";
 		cin>>yesNo;
 	
