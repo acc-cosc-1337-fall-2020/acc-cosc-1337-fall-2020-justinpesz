@@ -42,7 +42,7 @@ bool TicTacToe::check_board_full()const
 
 bool TicTacToe::check_column_win()
 {
-    for(std::size_t i=0; i < 3; ++i)
+    /*for(std::size_t i=0; i < 3; ++i)
     {
         if(pegs[i] == "X" && pegs[i+3] == "X" && pegs[i+6] == "X")
         {
@@ -52,13 +52,13 @@ bool TicTacToe::check_column_win()
         {
             return true;
         }
-    }
+    }*/
     return false;
 }
 
 bool TicTacToe::check_row_win()
 {
-    for(std::size_t i=0; i < 7; i += 3)
+    /*for(std::size_t i=0; i < 7; i += 3)
     {
         if(pegs[i] == "X" && pegs[i+1] == "X" && pegs[i+2] == "X")
         {
@@ -68,13 +68,13 @@ bool TicTacToe::check_row_win()
         {
             return true;
         }
-    }
+    }*/
     return false;
 }
 
 bool TicTacToe::check_diagonal_win()
 {
-    if(pegs[0] == "X" && pegs[4] == "X" && pegs[8] == "X")
+    /*if(pegs[0] == "X" && pegs[4] == "X" && pegs[8] == "X")
     {
         return true;
     } 
@@ -89,7 +89,7 @@ bool TicTacToe::check_diagonal_win()
     else if(pegs[6] == "O" && pegs[4] == "O" && pegs[2] == "O")
     {
         return true;
-    }
+    }*/
     return false;
 }
 
@@ -108,7 +108,11 @@ void TicTacToe::mark_board(int position)
     else if(pegs[position-1] != "X" || pegs[position-1] != "O")        
     {
         pegs[position-1] = player;
-        set_next_player();
+        
+        if(game_over() == false)
+        {
+            set_next_player();
+        }
     }   
 }
 
@@ -141,52 +145,95 @@ void TicTacToe::set_winner()
 {
     if(player == "X")
     {
-        winner = "O";
+        winner = "X";
     }
     else
     {
-        winner = "X";
+        winner = "O";
     }   
 }
 
 std::istream& operator>>(std::istream& in, TicTacToe& b)
 {
-    int position;
-			
-	std::cout<<"Enter position 1 to 9: ";
-		
-	while (!(in>>position))
-	{
-		std::cout<<"Invalid position!\n";
-		in.clear();
-		in.ignore(100, '\n');
-		std::cout<<"Enter position 1 to 9: ";
-	}
-			
-	if(position >= 1 && position <= 9)
-	{
-		b.mark_board(position);
-	}
-	else
-	{
-		std::cout<<"Invalid position!\n";
-	}
+    if(b.pegs.size() == 9)
+    {
+        int position;
+                
+        std::cout<<"Enter position 1 to 9: ";
+            
+        while (!(in>>position))
+        {
+            std::cout<<"Invalid position!\n";
+            in.clear();
+            in.ignore(100, '\n');
+            std::cout<<"Enter position 1 to 9: ";
+        }
+                
+        if(position >= 1 && position <= 9)
+        {
+            b.mark_board(position);
+        }
+        else
+        {
+            std::cout<<"Invalid position!\n";
+        }
+    }
+    else if(b.pegs.size() == 16)
+    {
+        int position;
+                
+        std::cout<<"Enter position 1 to 16: ";
+            
+        while (!(in>>position))
+        {
+            std::cout<<"Invalid position!\n";
+            in.clear();
+            in.ignore(100, '\n');
+            std::cout<<"Enter position 1 to 16: ";
+        }
+                
+        if(position >= 1 && position <= 16)
+        {
+            b.mark_board(position);
+        }
+        else
+        {
+            std::cout<<"Invalid position!\n";
+        }
+    }
     return in;   
 }
 
 
-std::ostream& operator<<(std::ostream& out, TicTacToe& b)
+std::ostream& operator<<(std::ostream& out, const TicTacToe& b)
 {
-    for(std::size_t i=0; i < b.pegs1.size(); i += 3)
+    if(b.pegs.size() == 9)
     {
-        out<<b.pegs1[i]<<"|"<<b.pegs1[i+1]<<"|"<<b.pegs1[i+2]<<"\n";
-    }
+        for(std::size_t i=0; i < b.pegs1.size(); i += 3)
+        {
+            out<<b.pegs1[i]<<"|"<<b.pegs1[i+1]<<"|"<<b.pegs1[i+2]<<"\n";
+        }
   
-    out<<"\n";
+        out<<"\n";
 
-    for(std::size_t n=0; n < b.pegs.size(); n += 3)
+        for(std::size_t n=0; n < b.pegs.size(); n += 3)
+        {
+            out<<b.pegs[n]<<"|"<<b.pegs[n+1]<<"|"<<b.pegs[n+2]<<"\n";
+        }
+    }
+    else if(b.pegs.size() == 16)    
     {
-        out<<b.pegs[n]<<"|"<<b.pegs[n+1]<<"|"<<b.pegs[n+2]<<"\n";
+        for(std::size_t i=0; i < b.pegs2.size(); i += 4)
+        {
+            out<<b.pegs2[i]<<"|"<<b.pegs2[i+1]<<"|"<<b.pegs2[i+2]<<"|"<<b.pegs2[i+3]<<"\n";
+        }
+  
+        out<<"\n";
+
+        for(std::size_t n=0; n < b.pegs.size(); n += 4)
+        {
+            out<<b.pegs[n]<<"|"<<b.pegs[n+1]<<"|"<<b.pegs[n+2]<<"|"<<b.pegs[n+3]<<"\n";
+        }
     }
     return out;
 }
