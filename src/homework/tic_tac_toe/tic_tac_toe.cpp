@@ -176,6 +176,7 @@ std::istream& operator>>(std::istream& in, TicTacToe& b)
         else
         {
             std::cout<<"Invalid position!\n";
+            position = 0;
         }
     }
     else if(b.pegs.size() == 16)
@@ -199,6 +200,7 @@ std::istream& operator>>(std::istream& in, TicTacToe& b)
         else
         {
             std::cout<<"Invalid position!\n";
+            position = 0;
         }
     }
     return in;   
@@ -227,7 +229,7 @@ std::ostream& operator<<(std::ostream& out, const TicTacToe& b)
         {
             out<<b.pegs2[i]<<"|"<<b.pegs2[i+1]<<"|"<<b.pegs2[i+2]<<"|"<<b.pegs2[i+3]<<"\n";
         }
-  
+
         out<<"\n";
 
         for(std::size_t n=0; n < b.pegs.size(); n += 4)
