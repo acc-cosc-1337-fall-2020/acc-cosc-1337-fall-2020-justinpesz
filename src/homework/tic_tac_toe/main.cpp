@@ -42,7 +42,14 @@ int main()
 		while(numSquare == 0)
 		{
 			cout<<"Select 3x3 or 4x4 game (3 or 4): ";
-			cin>>numSquare;
+			
+			while (!(cin>>numSquare))
+        	{
+            	std::cout<<"Invalid Board!\n";
+            	cin.clear();
+            	cin.ignore(5, '\n');
+            	std::cout<<"Select 3x3 or 4x4 game (3 or 4): ";
+        	}
 
 			if(numSquare == 3)
 			{

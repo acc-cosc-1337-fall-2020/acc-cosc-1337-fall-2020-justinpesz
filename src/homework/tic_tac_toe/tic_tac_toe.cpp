@@ -42,54 +42,16 @@ bool TicTacToe::check_board_full()const
 
 bool TicTacToe::check_column_win()
 {
-    /*for(std::size_t i=0; i < 3; ++i)
-    {
-        if(pegs[i] == "X" && pegs[i+3] == "X" && pegs[i+6] == "X")
-        {
-            return true;
-        }
-        else if(pegs[i] == "O" && pegs[i+3] == "O" && pegs[i+6] == "O")
-        {
-            return true;
-        }
-    }*/
     return false;
 }
 
 bool TicTacToe::check_row_win()
 {
-    /*for(std::size_t i=0; i < 7; i += 3)
-    {
-        if(pegs[i] == "X" && pegs[i+1] == "X" && pegs[i+2] == "X")
-        {
-            return true;
-        }
-        else if(pegs[i] == "O" && pegs[i+1] == "O" && pegs[i+2] == "O")
-        {
-            return true;
-        }
-    }*/
     return false;
 }
 
 bool TicTacToe::check_diagonal_win()
 {
-    /*if(pegs[0] == "X" && pegs[4] == "X" && pegs[8] == "X")
-    {
-        return true;
-    } 
-    else if(pegs[2] == "X" && pegs[4] == "X" && pegs[6] == "X")
-    {
-        return true;
-    }
-    else if(pegs[0] == "O" && pegs[4] == "O" && pegs[8] == "O")
-    {
-        return true;
-    }
-    else if(pegs[6] == "O" && pegs[4] == "O" && pegs[2] == "O")
-    {
-        return true;
-    }*/
     return false;
 }
 
@@ -225,10 +187,10 @@ std::ostream& operator<<(std::ostream& out, const TicTacToe& b)
     }
     else if(b.pegs.size() == 16)    
     {
-        for(std::size_t i=0; i < b.pegs2.size(); i += 4)
-        {
-            out<<b.pegs2[i]<<"|"<<b.pegs2[i+1]<<"|"<<b.pegs2[i+2]<<"|"<<b.pegs2[i+3]<<"\n";
-        }
+        out<<" "<<b.pegs2[0]<<"| "<<b.pegs2[1]<<"| "<<b.pegs2[2]<<"| "<<b.pegs2[3]<<"\n";
+        out<<" "<<b.pegs2[4]<<"| "<<b.pegs2[5]<<"| "<<b.pegs2[6]<<"| "<<b.pegs2[7]<<"\n";
+        out<<" "<<b.pegs2[8]<<"|"<<b.pegs2[9]<<"|"<<b.pegs2[10]<<"|"<<b.pegs2[11]<<"\n";
+        out<<b.pegs2[12]<<"|"<<b.pegs2[13]<<"|"<<b.pegs2[14]<<"|"<<b.pegs2[15]<<"\n";
 
         out<<"\n";
 
