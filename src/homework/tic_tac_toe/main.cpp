@@ -34,7 +34,7 @@ int main()
 			}
 			else
 			{
-				cout<<"Invalid player!\n";
+			  	cout<<"Invalid player!\n";
 				player = "";
 			}
 		}
@@ -47,7 +47,7 @@ int main()
         	{
             	std::cout<<"Invalid Board!\n";
             	cin.clear();
-            	cin.ignore(5, '\n');
+            	cin.ignore(100, '\n');
             	std::cout<<"Select 3x3 or 4x4 game (3 or 4): ";
         	}
 
