@@ -2,6 +2,7 @@
 #include "tic_tac_toe_manager.h"
 #include "tic_tac_toe_3.h"
 #include "tic_tac_toe_4.h"
+#include "tic_tac_toe_data.h"
 #include<memory>
 #include<utility>
 
@@ -12,6 +13,7 @@ int main()
 {
 	std::unique_ptr<TicTacToe> tic_tac_toe;
 	TicTacToeManager manager;
+	TicTacToeData data;
 	
 	std::string player = "";
 	char yesNo;

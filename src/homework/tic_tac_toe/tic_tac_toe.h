@@ -10,6 +10,7 @@ class TicTacToe
 public:
     TicTacToe(){};
     TicTacToe(int s) : pegs (s*s, " "){}
+    TicTacToe(std::vector<std::string> p, std::string win) : pegs{p}, winner{win}{}
     std::string get_player()const{return player;}
     std::string get_winner()const{return winner;}
     bool game_over();
@@ -17,9 +18,10 @@ public:
     void mark_board(int position);
     friend std::ostream& operator<<(std::ostream& out, const TicTacToe& b);
     friend std::istream& operator>>(std::istream& in, TicTacToe& b);
+    std::vector<std::string> get_pegs()const{return pegs;}
 
 protected:
-    std::vector<std::string> pegs{0};
+    std::vector<std::string> pegs{};
     std::vector<int> pegs1{1, 2, 3, 4, 5, 6, 7, 8, 9};
     std::vector<int> pegs2{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
     virtual bool check_column_win();

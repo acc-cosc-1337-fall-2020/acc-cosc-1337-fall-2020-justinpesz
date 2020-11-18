@@ -45,3 +45,14 @@ void TicTacToeManager::update_winner_count(string winner)
         Ties += 1;
     }
 }
+
+TicTacToeManager::TicTacToeManager(TicTacToeData &data)
+{
+    games = std::move(data.get_games());
+    
+    for(auto& game : games)
+    {
+        
+        pegs.push_back(string);
+    }
+}
