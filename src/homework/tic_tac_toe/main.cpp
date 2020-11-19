@@ -13,7 +13,6 @@ int main()
 {
 	std::unique_ptr<TicTacToe> tic_tac_toe;
 	TicTacToeManager manager;
-	TicTacToeData data;
 	
 	std::string player = "";
 	char yesNo;
@@ -107,6 +106,6 @@ int main()
 
 	cout<<"\n";
 	cout<<manager;
-	
+
 	return 0;	
 }

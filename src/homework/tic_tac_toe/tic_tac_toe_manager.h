@@ -17,7 +17,7 @@ class TicTacToeManager
 {
 public:
     TicTacToeManager() = default;
-    TicTacToeManager(TicTacToeData &data){};
+    //TicTacToeManager(TicTacToeData &data) : games{};
     void save_game(std::unique_ptr<TicTacToe> &b);
     friend std::ostream& operator<<(std::ostream& out, const TicTacToeManager& manager);
     void get_winner_total(int& X, int& O, int& T);
@@ -28,7 +28,7 @@ private:
     int O_win{0};
     int Ties{0};
     void update_winner_count(string winner);
-    
+
 };
 
 #endif
