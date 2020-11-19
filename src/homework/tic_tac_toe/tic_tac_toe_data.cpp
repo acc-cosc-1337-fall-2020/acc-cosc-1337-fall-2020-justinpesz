@@ -26,7 +26,7 @@ std::vector<std::unique_ptr<TicTacToe>> TicTacToeData::get_games()
 {
     std::ifstream read_file;
     read_file.open(file_name);
-    
+      
     std::vector<std::unique_ptr<TicTacToe>> boards;
     std::string line;
     
@@ -47,18 +47,18 @@ std::vector<std::unique_ptr<TicTacToe>> TicTacToeData::get_games()
 
         //pegs{X, O, X, O, ...}
 
-        std::unique_ptr<TicTacToe> tic_tac_toe;
+        std::unique_ptr<TicTacToe> tic_tac;
 
         if(pegs.size() == 9)
         {
-            tic_tac_toe = std::make_unique<TicTacToe3>(pegs, winner);
+            tic_tac = std::make_unique<TicTacToe3>(pegs, winner);
         }
         if(pegs.size() == 16)
         {
-            tic_tac_toe = std::make_unique<TicTacToe4>(pegs, winner);
+            tic_tac = std::make_unique<TicTacToe4>(pegs, winner);
         }
         
-        boards.push_back(std::move(tic_tac_toe));
+        boards.push_back(std::move(tic_tac));
     }
     
     read_file.close();

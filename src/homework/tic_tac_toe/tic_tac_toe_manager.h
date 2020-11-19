@@ -28,7 +28,7 @@ private:
     int O_win{0};
     int Ties{0};
     void update_winner_count(string winner);
-
+    
 };
 
 #endif
