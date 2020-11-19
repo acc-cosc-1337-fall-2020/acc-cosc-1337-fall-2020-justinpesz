@@ -10,7 +10,7 @@ class TicTacToe
 public:
     TicTacToe(){};
     TicTacToe(int s) : pegs (s*s, " "){}
-    TicTacToe(std::vector<std::string> p, std::string win) : pegs{p}, winner{win}{}
+    TicTacToe(std::vector<std::string> p, std::string win) : pegs(p), winner(win){}
     std::string get_player()const{return player;}
     std::string get_winner()const{return winner;}
     bool game_over();

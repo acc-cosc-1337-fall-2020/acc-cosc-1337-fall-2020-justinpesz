@@ -13,7 +13,12 @@ int main()
 {
 	std::unique_ptr<TicTacToe> tic_tac_toe;
 	TicTacToeManager manager;
+	TicTacToeData game;
 	
+	std::vector<std::unique_ptr<TicTacToe>> boards;
+
+	boards = game.get_games();
+
 	std::string player = "";
 	char yesNo;
 	int numSquare = 0;
@@ -106,6 +111,8 @@ int main()
 
 	cout<<"\n";
 	cout<<manager;
+	
+	game.save_games(boards);
 
 	return 0;	
 }
