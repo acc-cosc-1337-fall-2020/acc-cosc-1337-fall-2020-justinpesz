@@ -12,7 +12,7 @@ public:
     TicTacToe(int s) : pegs (s*s, " "){}
     TicTacToe(std::vector<std::string> p, std::string win) : pegs(p), winner(win){}
     std::string get_player()const{return player;}
-    std::string get_winner()const{return winner;}
+    std::string get_winner(){return winner;}
     bool game_over();
     void start_game(std::string first_player);
     void mark_board(int position);

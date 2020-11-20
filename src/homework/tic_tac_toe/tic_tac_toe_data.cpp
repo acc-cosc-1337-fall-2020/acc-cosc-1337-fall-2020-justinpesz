@@ -2,6 +2,7 @@
 #include "tic_tac_toe_3.h"
 #include "tic_tac_toe_4.h"
 #include<memory>
+#include<fstream>
 
 //cpp
 void TicTacToeData::save_games(const std::vector<std::unique_ptr<TicTacToe>>& games)
@@ -15,8 +16,7 @@ void TicTacToeData::save_games(const std::vector<std::unique_ptr<TicTacToe>>& ga
         {
             file_out<<c;
         }
-        file_out<<game->get_winner();
-        file_out<<"\n"<<std::endl;
+        file_out<<game->get_winner()<<std::endl;
     }
 
     file_out.close();
@@ -43,22 +43,20 @@ std::vector<std::unique_ptr<TicTacToe>> TicTacToeData::get_games()
         std::string winner = pegs[pegs.size()-1];
         pegs.resize(pegs.size()-1);               
         
-        //pegs{XOOXOXOXOO, XOXOXOXOXX, ...}
-
-        //pegs{X, O, X, O, ...}
-
-        std::unique_ptr<TicTacToe> tic_tac;
+        std::unique_ptr<TicTacToe> tic_tac_toe;
 
         if(pegs.size() == 9)
         {
-            tic_tac = std::make_unique<TicTacToe3>(pegs, winner);
+            tic_tac_toe = std::make_unique<TicTacToe3>(pegs, winner);
         }
         if(pegs.size() == 16)
         {
-            tic_tac = std::make_unique<TicTacToe4>(pegs, winner);
+            tic_tac_toe = std::make_unique<TicTacToe4>(pegs, winner);
         }
         
-        boards.push_back(std::move(tic_tac));
+        boards.push_back(std::move(tic_tac_toe));
+        
+        pegs.resize(0);
     }
     
     read_file.close();

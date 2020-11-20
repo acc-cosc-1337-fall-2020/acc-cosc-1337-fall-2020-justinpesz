@@ -12,18 +12,9 @@ using std::cin;
 int main() 
 {
 	std::unique_ptr<TicTacToe> tic_tac_toe;
-	TicTacToeManager manager;
 	TicTacToeData gamer;
-	
-	std::vector<std::unique_ptr<TicTacToe>> boards;
+	TicTacToeManager manager(gamer);
 
-	boards = gamer.get_games();
-	
-	/*for(auto& c : boards)
-	{
-		cout<<*c;
-	}*/
-	
 	std::string player = "";
 	char yesNo;
 	int numSquare = 0;
@@ -102,7 +93,6 @@ int main()
 		int T = 0;
 
 		manager.save_game(tic_tac_toe);
-		gamer.save_games(boards);
 		manager.get_winner_total(X, O, T);
 		
 		cout<<"X wins: "<<X<<"\n";

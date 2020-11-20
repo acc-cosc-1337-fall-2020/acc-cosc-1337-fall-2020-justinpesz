@@ -22,7 +22,7 @@ bool TicTacToe::game_over()
     }
     else if(check_board_full() == true)
     {
-        winner = "Tie!";
+        winner = "T";
         return true;
     }
     return false;
