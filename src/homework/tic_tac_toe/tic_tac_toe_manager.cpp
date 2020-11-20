@@ -15,10 +15,13 @@ void TicTacToeManager::save_game(std::unique_ptr<TicTacToe> &b)
 
 std::ostream& operator<<(std::ostream& out, const TicTacToeManager& manager)
 {
+    int count = 1;
     for(auto& game : manager.games)
     {
+        out<<"Game "<<count<<"\n";
         out<<*game;
         out<<"Game winner: "<<game->get_winner()<<"\n\n"; 
+        count += 1;
     }
     return out;
 }
