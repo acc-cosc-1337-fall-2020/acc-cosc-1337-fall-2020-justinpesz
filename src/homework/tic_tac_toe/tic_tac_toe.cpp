@@ -173,12 +173,12 @@ std::ostream& operator<<(std::ostream& out, const TicTacToe& b)
 {
     if(b.pegs.size() == 9)
     {
-        /*for(std::size_t i=0; i < b.pegs1.size(); i += 3)
+        for(std::size_t i=0; i < b.pegs1.size(); i += 3)
         {
             out<<b.pegs1[i]<<"|"<<b.pegs1[i+1]<<"|"<<b.pegs1[i+2]<<"\n";
         }
   
-        out<<"\n";*/
+        out<<"\n";
 
         for(std::size_t n=0; n < b.pegs.size(); n += 3)
         {
@@ -187,12 +187,12 @@ std::ostream& operator<<(std::ostream& out, const TicTacToe& b)
     }
     else if(b.pegs.size() == 16)    
     {
-        /*out<<" "<<b.pegs2[0]<<"| "<<b.pegs2[1]<<"| "<<b.pegs2[2]<<"| "<<b.pegs2[3]<<"\n";
+        out<<" "<<b.pegs2[0]<<"| "<<b.pegs2[1]<<"| "<<b.pegs2[2]<<"| "<<b.pegs2[3]<<"\n";
         out<<" "<<b.pegs2[4]<<"| "<<b.pegs2[5]<<"| "<<b.pegs2[6]<<"| "<<b.pegs2[7]<<"\n";
         out<<" "<<b.pegs2[8]<<"|"<<b.pegs2[9]<<"|"<<b.pegs2[10]<<"|"<<b.pegs2[11]<<"\n";
         out<<b.pegs2[12]<<"|"<<b.pegs2[13]<<"|"<<b.pegs2[14]<<"|"<<b.pegs2[15]<<"\n";
 
-        out<<"\n";*/
+        out<<"\n";
 
         for(std::size_t n=0; n < b.pegs.size(); n += 4)
         {
