@@ -11,8 +11,8 @@ public:
     TicTacToe4(std::vector<std::string> p, std::string winner) : TicTacToe(p, winner){}
     
 private:
-    bool check_column_win();
-    bool check_row_win();
-    bool check_diagonal_win();
+    virtual bool check_column_win() const override;
+    virtual bool check_row_win() const override;
+    virtual bool check_diagonal_win() const override;
 };
 #endif

@@ -40,17 +40,17 @@ bool TicTacToe::check_board_full()const
     return true;
 }
 
-bool TicTacToe::check_column_win()
+bool TicTacToe::check_column_win() const
 {
     return false;
 }
 
-bool TicTacToe::check_row_win()
+bool TicTacToe::check_row_win() const
 {
     return false;
 }
 
-bool TicTacToe::check_diagonal_win()
+bool TicTacToe::check_diagonal_win() const
 {
     return false;
 }

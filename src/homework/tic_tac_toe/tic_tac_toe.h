@@ -24,9 +24,9 @@ protected:
     std::vector<std::string> pegs{};
     std::vector<int> pegs1{1, 2, 3, 4, 5, 6, 7, 8, 9};
     std::vector<int> pegs2{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
-    virtual bool check_column_win();
-    virtual bool check_row_win();
-    virtual bool check_diagonal_win();
+    virtual bool check_column_win() const = 0;
+    virtual bool check_row_win() const = 0;
+    virtual bool check_diagonal_win() const = 0;
 
 private:
     std::string winner;

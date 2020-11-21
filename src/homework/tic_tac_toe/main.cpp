@@ -85,7 +85,17 @@ int main()
 		}while(tic_tac_toe->game_over() == false);
 		
 		cout<<"Game Over\n\n";
-		cout<<"The winner of the game is: "<<tic_tac_toe->get_winner()<<"\n\n";
+		cout<<"The winner of the game is: "<<tic_tac_toe->get_winner();
+		
+		if(tic_tac_toe->get_winner() == "T")
+		{
+			cout<<"ie!\n\n";
+		}
+		else
+		{
+			cout<<"\n\n";
+		}
+
 		player = "";
 
 		int X = 0;

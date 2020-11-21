@@ -33,7 +33,7 @@ TEST_CASE("Verify game 3x3 ends when the board is full")
 	REQUIRE(tic_tac_toe->game_over() == false);
 	tic_tac_toe->mark_board(8);
 	REQUIRE(tic_tac_toe->game_over() == true);
-	REQUIRE(tic_tac_toe->get_winner() == "Tie!");
+	REQUIRE(tic_tac_toe->get_winner() == "T");
 }
 
 TEST_CASE("Verify game 4x4 ends when the board is full")
@@ -74,7 +74,7 @@ TEST_CASE("Verify game 4x4 ends when the board is full")
 	REQUIRE(tic_tac_toe->game_over() == false);
 	tic_tac_toe->mark_board(16);
 	REQUIRE(tic_tac_toe->game_over() == true);
-	REQUIRE(tic_tac_toe->get_winner() == "Tie!");
+	REQUIRE(tic_tac_toe->get_winner() == "T");
 }
 
 TEST_CASE("get 3x3 player function X")

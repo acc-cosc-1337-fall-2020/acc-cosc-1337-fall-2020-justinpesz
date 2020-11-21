@@ -20,7 +20,17 @@ std::ostream& operator<<(std::ostream& out, const TicTacToeManager& manager)
     {
         out<<"Game "<<count<<"\n";
         out<<*game;
-        out<<"Game winner: "<<game->get_winner()<<"\n\n"; 
+        out<<"Game winner: "<<game->get_winner(); 
+        
+        if(game->get_winner() == "T")
+        {
+            out<<"ie!\n\n";
+        }
+        else
+        {
+            out<<"\n\n";
+        }
+        
         count += 1;
     }
     return out;

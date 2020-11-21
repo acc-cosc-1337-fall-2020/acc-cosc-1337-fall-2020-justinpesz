@@ -1,6 +1,6 @@
 #include "tic_tac_toe_3.h"
 
-bool TicTacToe3::check_column_win()
+bool TicTacToe3::check_column_win() const
 {
     for(std::size_t i=0; i < 3; ++i)
     {
@@ -16,7 +16,7 @@ bool TicTacToe3::check_column_win()
     return false;
 }
 
-bool TicTacToe3::check_row_win()
+bool TicTacToe3::check_row_win() const
 {
     for(std::size_t i=0; i < 7; i += 3)
     {
@@ -32,7 +32,7 @@ bool TicTacToe3::check_row_win()
     return false;
 }
 
-bool TicTacToe3::check_diagonal_win()
+bool TicTacToe3::check_diagonal_win() const
 {
     if(pegs[0] == "X" && pegs[4] == "X" && pegs[8] == "X")
     {
